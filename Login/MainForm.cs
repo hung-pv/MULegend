@@ -16,8 +16,9 @@ namespace Login
         public MainForm()
         {
             InitializeComponent();
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnSetting.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatAppearance.BorderSize = //
+            this.btnSetting.FlatAppearance.BorderSize = //
+            this.btnCopyPassword.FlatAppearance.BorderSize = 0;
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -30,11 +31,10 @@ namespace Login
         {
             if (this.cbbAccounts.SelectedIndex < 0)
                 return;
-            string acc = ((Account)this.cbbAccounts.SelectedItem).AccountName;
-            string pass = ((Account)this.cbbAccounts.SelectedItem).Password;
+            Account selected = GetSelectedAccount();
 
-            PatchGameAccount(acc);
-            ClipboardSetText(pass);
+            PatchGameAccount(selected.AccountName);
+            ClipboardSetText(selected.Password);
             StartClient();
         }
 
@@ -47,6 +47,15 @@ namespace Login
                 Environment.Exit(1);
             }
 #endif
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 500;
+            toolTip1.ReshowDelay = 500;
+            toolTip1.ShowAlways = true;
+            toolTip1.SetToolTip(this.btnSetting, "Cài đặt");
+            toolTip1.SetToolTip(this.cbbAccounts, "Danh sách tài khoản");
+            toolTip1.SetToolTip(this.btnCopyPassword, "Copy mật khẩu (Ctrl V để paste)");
+            toolTip1.SetToolTip(this.btnLogin, "Khởi động");
             reloadConfig();
         }
 
@@ -56,7 +65,7 @@ namespace Login
             this.cbbAccounts.DataSource = AccountManager.Accounts;
             this.cbbAccounts.DisplayMember = "AccountName";
         }
-        
+
         private void PatchGameAccount(string account)
         {
             string[] lines = File.ReadAllLines("LauncherOption.if");
@@ -105,6 +114,19 @@ namespace Login
         private void ClipBoardThreadWorker(string inTextToCopy)
         {
             Clipboard.SetText(inTextToCopy, TextDataFormat.Text);
+        }
+
+        private void btnCopyPassword_Click(object sender, EventArgs e)
+        {
+            if (this.cbbAccounts.SelectedIndex < 0)
+                return;
+            Account selected = GetSelectedAccount();
+            ClipboardSetText(selected.Password);
+        }
+
+        private Account GetSelectedAccount()
+        {
+            return (Account)this.cbbAccounts.SelectedItem;
         }
     }
 }

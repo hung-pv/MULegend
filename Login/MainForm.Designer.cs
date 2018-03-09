@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.cbbAccounts = new System.Windows.Forms.ComboBox();
+            this.btnCopyPassword = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -43,8 +44,22 @@
             this.cbbAccounts.FormattingEnabled = true;
             this.cbbAccounts.Location = new System.Drawing.Point(27, 2);
             this.cbbAccounts.Name = "cbbAccounts";
-            this.cbbAccounts.Size = new System.Drawing.Size(177, 21);
+            this.cbbAccounts.Size = new System.Drawing.Size(126, 21);
             this.cbbAccounts.TabIndex = 1;
+            // 
+            // btnCopyPassword
+            // 
+            this.btnCopyPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCopyPassword.BackgroundImage = global::Login.Properties.Resources.paste;
+            this.btnCopyPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCopyPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCopyPassword.Location = new System.Drawing.Point(160, 2);
+            this.btnCopyPassword.Name = "btnCopyPassword";
+            this.btnCopyPassword.Size = new System.Drawing.Size(21, 21);
+            this.btnCopyPassword.TabIndex = 3;
+            this.btnCopyPassword.UseVisualStyleBackColor = true;
+            this.btnCopyPassword.Click += new System.EventHandler(this.btnCopyPassword_Click);
             // 
             // btnLogin
             // 
@@ -53,7 +68,7 @@
             this.btnLogin.BackgroundImage = global::Login.Properties.Resources.arrow_r;
             this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Location = new System.Drawing.Point(209, 2);
+            this.btnLogin.Location = new System.Drawing.Point(188, 2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(21, 21);
             this.btnLogin.TabIndex = 2;
@@ -79,12 +94,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(233, 26);
+            this.ClientSize = new System.Drawing.Size(212, 26);
+            this.Controls.Add(this.btnCopyPassword);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.cbbAccounts);
             this.Controls.Add(this.btnSetting);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(500, 53);
+            this.MinimumSize = new System.Drawing.Size(200, 53);
             this.Name = "MainForm";
             this.Text = "MU Legend";
             this.Shown += new System.EventHandler(this.MainForm_Shown);
@@ -97,6 +115,7 @@
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.ComboBox cbbAccounts;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnCopyPassword;
     }
 }
 
