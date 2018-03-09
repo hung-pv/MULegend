@@ -96,13 +96,10 @@ namespace Login
 
         private void ClipboardSetText(string inTextToCopy)
         {
-            ClipBoardThreadWorker(inTextToCopy);
-            /*
             var clipboardThread = new Thread(() => ClipBoardThreadWorker(inTextToCopy));
             clipboardThread.SetApartmentState(ApartmentState.STA);
             clipboardThread.IsBackground = false;
             clipboardThread.Start();
-            */
         }
 
         private void ClipBoardThreadWorker(string inTextToCopy)
