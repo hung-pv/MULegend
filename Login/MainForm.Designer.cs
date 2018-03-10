@@ -43,7 +43,7 @@
             this.cbbAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbbAccounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbAccounts.FormattingEnabled = true;
-            this.cbbAccounts.Location = new System.Drawing.Point(47, 2);
+            this.cbbAccounts.Location = new System.Drawing.Point(94, 2);
             this.cbbAccounts.Name = "cbbAccounts";
             this.cbbAccounts.Size = new System.Drawing.Size(187, 41);
             this.cbbAccounts.TabIndex = 1;
@@ -51,11 +51,11 @@
             // btnCopyPassword
             // 
             this.btnCopyPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCopyPassword.BackgroundImage = global::Login.Properties.Resources.paste;
             this.btnCopyPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCopyPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCopyPassword.Location = new System.Drawing.Point(240, 2);
+            this.btnCopyPassword.Location = new System.Drawing.Point(47, 2);
             this.btnCopyPassword.Name = "btnCopyPassword";
             this.btnCopyPassword.Size = new System.Drawing.Size(41, 41);
             this.btnCopyPassword.TabIndex = 3;
